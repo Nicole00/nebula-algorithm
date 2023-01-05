@@ -6,7 +6,7 @@
     <parent>
         <artifactId>algorithm</artifactId>
         <groupId>com.vesoft</groupId>
-        <version>3.0-SNAPSHOT</version>
+        <version>3.5.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -57,7 +57,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.scopt</groupId>
-            <artifactId>scopt_2.11</artifactId>
+            <artifactId>scopt_2.12</artifactId>
             <version>${scopt.version}</version>
         </dependency>
         <dependency>
@@ -71,6 +71,11 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.12.10</version>
         </dependency>
     </dependencies>
 
@@ -113,7 +118,7 @@
                     <artifactId>maven-scala-plugin</artifactId>
                     <version>2.15.2</version>
                     <configuration>
-                        <scalaVersion>2.11.12</scalaVersion>
+                        <scalaVersion>2.12.10</scalaVersion>
                         <args>
                             <arg>-target:jvm-1.8</arg>
                         </args>
@@ -129,7 +134,6 @@
                             </goals>
                             <configuration>
                                 <excludes>
-                                    <exclude>com/vesoft/tools/**</exclude>
                                     <exclude>META-INF/*.SF</exclude>
                                     <exclude>META-INF/*.DSA</exclude>
                                     <exclude>META-INF/*.RSA</exclude>
@@ -141,11 +145,6 @@
                             <goals>
                                 <goal>testCompile</goal>
                             </goals>
-                            <configuration>
-                                <excludes>
-                                    com/vesoft/tools/**
-                                </excludes>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
